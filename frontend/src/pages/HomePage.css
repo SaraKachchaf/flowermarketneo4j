@@ -1,0 +1,326 @@
+/* =========================
+   GLOBAL
+========================= */
+.homepage-container {
+  width: 100%;
+  overflow-x: hidden;
+  background: #fff;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero-section {
+  font-size: 25px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 60px;
+  text-align: center;
+  color: white;
+
+  background-image:
+    linear-gradient(
+      rgba(10, 40, 30, 0.45),
+      rgba(10, 40, 30, 0.45)
+    ),
+    url('/src/assets/fleur.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* =========================
+   PROMOTIONS
+========================= */
+.promotions-section {
+  padding: 100px 60px;
+  background: linear-gradient(135deg, #fff5f7, #fff);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 40px;
+  color: #1e4e3a;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Grid */
+.promotions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.promotion-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.promotion-card:hover {
+  transform: translateY(-8px);
+}
+
+
+/* IMAGE PREND TOUTE LA CARTE */
+.card-image {
+  width: 100%;        /* prend toute la largeur */
+  height: 260px;      /* hauteur visible (tu peux mettre 250px si tu veux) */
+  object-fit: cover; /* remplit sans déformation */
+  border-radius: 16px 16px 0 0; /* arrondi en haut */
+  display: block;
+}
+
+
+.promotion-image {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promotion-content {
+  padding: 25px;
+}
+
+.promotion-content h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.promotion-provider {
+  font-style: italic;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.promotion-description {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.promotion-prices {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.current-price {
+  font-size: 17px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+
+.promotion-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  background: #2e7d32;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+/* ========================= */
+/* IMAGE WRAPPER */
+/* ========================= */
+.promotion-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* ========================= */
+/* PROMOTION BADGE */
+/* ========================= */
+.promotion-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+
+  background: linear-gradient(135deg, #ff5f9e, #ff2d7a);
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  box-shadow: 0 8px 20px rgba(255, 45, 122, 0.35);
+  z-index: 10;
+}
+
+/* ========================= */
+/* IMAGE */
+/* ========================= */
+.promotion-card-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px 16px 0 0;
+}
+
+
+.promotion-button:hover {
+  background: #1b5e20;
+}
+
+/* =========================
+   PRODUITS / PRESTATAIRES
+========================= */
+#produits {
+  padding: 120px 60px;
+  background: white;
+}
+
+.products-section-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.products-intro h2 {
+  font-size: 42px;
+  color: #1e4e3a;
+}
+
+.products-intro p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #555;
+}
+
+.decorative-line {
+  width: 80px;
+  height: 4px;
+  background: #48bb78;
+  margin: 30px auto 60px;
+}
+
+/* =========================
+   FEATURE SECTION
+========================= */
+.feature-section {
+  background: linear-gradient(135deg, #e8f5e9, #ffffff);
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.feature-content h3 {
+  font-size: 30px;
+  color: #1e4e3a;
+}
+
+.feature-content p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 20px auto 0;
+  color: #555;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #1e4e3a;
+  color: white;
+  padding: 60px 40px 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.footer-section p {
+  opacity: 0.85;
+}
+
+.social-icons span {
+  font-size: 22px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+.homepage-title {
+  font-size: 92px;        /* AVANT : 64px */
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+}
+@media (max-width: 768px) {
+  .homepage-title {
+    font-size: 54px;
+  }
+}
+  .hero-section {
+    padding-top: 140px;
+  }
+
+  .promotions-section,
+  #produits,
+  .feature-section {
+    padding: 80px 20px;
+  }
+
+.scroll-indicator {
+  margin-top: 200px;
+  font-size: 16px;
+  opacity: 0.85;
+  animation: bounce 2s infinite;
+}
+
+/* Petite animation élégante */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}

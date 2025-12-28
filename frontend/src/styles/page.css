@@ -1,0 +1,42 @@
+.page-container {
+    padding: 40px;
+    padding-left: 80px;
+    color: #DAF1DE;
+    min-height: 100vh;
+    background: linear-gradient(160deg, #0B2B26, #051F20);
+    position: relative;
+}
+
+.page-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 18px;
+    backdrop-filter: blur(6px);
+    color: #DAF1DE;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #8EB69B;
+}
+
+.page-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.plant-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70vh;
+    opacity: 0.23;
+    z-index: 0;
+    pointer-events: none;
+    mix-blend-mode: soft-light;
+}

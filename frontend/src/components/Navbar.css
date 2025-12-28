@@ -1,0 +1,117 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  z-index: 1000;
+  font-size: 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  position: fixed;
+  background-color: #163d2d;
+  /* VERT FONCÉ PROPRE */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* Menu centre */
+.navbar-menu {
+  display: flex;
+  gap: 40px;
+}
+
+/* Zone droite (connexion + panier) */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Bouton connexion */
+.navbar-login {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Panier */
+.navbar-cart {
+  position: relative;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.navbar-cart:hover {
+  transform: scale(1.1);
+}
+
+/* Badge panier */
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff5252;
+  color: white;
+  font-size: 10px;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0 4px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-login {
+  background: white;
+  color: #163d2d;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navbar-login:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+/* Logout Button */
+.navbar-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navbar-logout:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+.navbar-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}

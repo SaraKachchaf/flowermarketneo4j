@@ -1,0 +1,293 @@
+/* Email Verification Page */
+.email-verification-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/Pattern.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Dark overlay for better readability */
+.email-verification-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* Email Verification Container */
+.email-verification-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  margin: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Header */
+.email-verification-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.email-verification-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8B5A3C 0%, #D4A574 50%, #8B5A3C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+  font-family: 'Playfair Display', serif;
+}
+
+.email-verification-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+}
+
+.email-verification-header p {
+  color: #6b7280;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.email-verification-header strong {
+  color: #8B5A3C;
+  font-weight: 600;
+}
+
+/* Success Message */
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-left: 4px solid #28a745;
+  font-size: 14px;
+}
+
+/* Error Message */
+.error-message {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border-left: 4px solid #e53e3e;
+}
+
+/* Form */
+.email-verification-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-weight: 500;
+  color: #2d3748;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-family: 'Playfair Display', serif;
+}
+
+.code-input {
+  padding: 12px 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 10px;
+  font-weight: bold;
+  color: #2d3748;
+  transition: all 0.2s ease;
+  background: #f7fafc;
+  font-family: 'Courier New', monospace;
+}
+
+.code-input:focus {
+  outline: none;
+  border-color: #8B5A3C;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(139, 90, 60, 0.1);
+}
+
+.code-input::placeholder {
+  color: #a0aec0;
+  letter-spacing: normal;
+  font-size: 16px;
+}
+
+.code-hint {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Verify Button */
+.verify-btn {
+  background: linear-gradient(135deg, #8B5A3C 0%, #D4A574 50%, #8B5A3C 100%);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 20px rgba(139, 90, 60, 0.3);
+}
+
+.verify-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(139, 90, 60, 0.4);
+  background: linear-gradient(135deg, #A0673F 0%, #E6B886 50%, #A0673F 100%);
+}
+
+.verify-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.verify-btn:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.verify-btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.verify-btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Resend Button */
+.resend-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.resend-btn {
+  background: transparent;
+  border: none;
+  color: #8B5A3C;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: 'Playfair Display', serif;
+  transition: color 0.2s ease;
+}
+
+.resend-btn:hover:not(:disabled) {
+  color: #D4A574;
+}
+
+.resend-btn:disabled {
+  color: #a0aec0;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+/* Footer */
+.email-verification-footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #718096;
+  font-size: 14px;
+}
+
+.back-login {
+  color: #8B5A3C;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.back-login:hover {
+  color: #D4A574;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .email-verification-container {
+    padding: 30px 25px;
+    margin: 10px;
+  }
+  
+  .email-verification-header h1 {
+    font-size: 24px;
+  }
+  
+  .email-verification-header h2 {
+    font-size: 20px;
+  }
+  
+  .code-input {
+    padding: 10px 14px;
+    font-size: 20px;
+    letter-spacing: 8px;
+  }
+  
+  .verify-btn {
+    padding: 12px 18px;
+  }
+}
